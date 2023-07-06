@@ -1,0 +1,92 @@
+<body>
+
+<app-dashboard-header></app-dashboard-header>
+
+	
+
+<div class="container">
+	<div class="registration mx-auto d-block w-100">
+		<div class="page-header text-center">
+			<h1>Apply Loan</h1>
+		</div>
+		
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="member-registration" action="/astroidnew/index.php/pages/register?task=registration.register" method="post" class="form-validate form-horizontal well" enctype="multipart/form-data">
+			<fieldset>
+				<div class="form-group">
+					<label for="clientId">Client Id</label>
+					<input formControlName="clientId" type="number" class="form-control" id="clientId" required>
+				</div>
+				<div class="form-group">
+					<label for="loan">Loan Amount</label>
+					<input formControlName="loan" type="number" class="form-control" id="loan" required>
+				</div>
+				<div class="form-group">
+					<label for="term">Term</label>
+					<input formControlName="term" type="number" class="form-control" id="term" equired>
+                    <caption>Enter Term in Months*</caption>
+				</div>
+				<div class="form-group">
+                    <label for="interest">Interest</label>
+					<input formControlName="interest" type="number" class="form-control" id="interest" required>
+				</div>
+				<div class="form-group">
+                    <label for="exampleInputPassword1">Home Address</label>
+					<input formControlName="address" type="text" class="form-control" id="address" required>
+				</div>
+				<div class="form-group">
+                    <label for="salary">Salary</label>
+					<input formControlName="salary" type="number" class="form-control" id="salary" required>
+                    <caption>Enter Net Monthly Salary*</caption>
+				</div>
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="form-group d-flex justify-content-start">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+        <div class="overlay" *ngIf="displayEligiblePrompt">
+			<div class="popup">
+				<h2>Eligible!!! ✅</h2>
+				<div class="content">
+					EMI = {{EMI}}, Loan Amount = {{loan}}, Interest = {{interest}}
+				</div>
+				<button type="button" (click)="accept_eligible()" class="btn btn-success">Accept</button>
+				<button type="button" (click)="rejected()" class="btn btn-danger">Reject</button>
+			</div>
+		</div>
+
+        <div class="overlay" *ngIf="displayUneligiblePrompt">
+			<div class="popup">
+				<h2>Not Eligible!!! ❌</h2>
+				<!-- <a class="close" (click)="popup = false">&times;</a> -->
+				<p>You are Eligible For the following Amount!</p>
+				<div class="content">
+					EMI = {{newEMI}}, Loan Amount = {{newLoan}}, Interest = {{newInterest}}
+				</div>
+				<button type="button" (click)="accept_unEligible()" class="btn btn-success">Accept</button>
+				<button type="button" (click)="rejected()" class="btn btn-danger">Reject</button>
+			</div>
+		</div>
+
+        <div class="overlay" *ngIf="successPage">
+			<div class="popup">
+				<h2>Account Created Successfully</h2>
+				<!-- <a class="close" (click)="popup = false">&times;</a> -->
+				<p>You can view status of your application in the Status Bar</p>
+				<button type="button" (click)="home()" class="btn btn-dark">Home</button>
+				<button type="button" (click)="status()" class="btn btn-dark">Status</button>
+			</div>
+		</div>
+        <div class="overlay" *ngIf="failurePage">
+			<div class="popup">
+				<h2>Account Creation Failed</h2>
+				<!-- <a class="close" (click)="popup = false">&times;</a> -->
+				<p>Incorrect Client Id</p>
+				<button type="button" (click)="applyLoan()" class="btn btn-dark">Retry</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>

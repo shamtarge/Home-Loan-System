@@ -1,0 +1,26 @@
+label {
+    font-weight: 600;
+    color: #666;
+}
+.box8{
+  box-shadow: 0px 0px 5px 1px #999;
+}
+.mx-t3{
+  margin-top: -3rem;
+}
+form{
+    margin-top: 80px;
+}
+
+h2{
+  color: white;
+  text-align: center;
+}
+#mainDiv{
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+body{
+  background-color: #595959;
+}

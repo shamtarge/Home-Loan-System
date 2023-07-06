@@ -1,0 +1,190 @@
+<body>
+<app-header></app-header>
+
+<div class="container mt-3" >
+  <!-- #registeration = "ngForm" registeration.value -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <div class="col-sm-12 mx-t3 mb-4">
+          <h2>Register</h2>
+        </div>
+      <div class="row jumbotron box8" id="mainDiv">
+        <div class="col-sm-6 form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" formControlName="firstName" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name." required> 
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.firstName">
+            <div class="error-message" *ngIf="loginForm.get('firstName').hasError(error.type) && (loginForm.get('firstName').dirty || loginForm.get('firstName').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group">
+          <label for="lastName">Last name</label>
+          <input type="text" formControlName="lastName" class="form-control" name="lastName" id="nlastname" placeholder="Enter your last name." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.lastName">
+            <div class="error-message" *ngIf="loginForm.get('lastName').hasError(error.type) && (loginForm.get('lastName').dirty || loginForm.get('lastName').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="Enter your email." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.email">
+            <div class="error-message" *ngIf="loginForm.get('email').hasError(error.type) && 
+      (loginForm.get('email').dirty || loginForm.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+        
+        <div class="col-sm-6 form-group">
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="number" formControlName="mobileNumber" class="form-control" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number" required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.mobileNumber">
+            <div class="error-message" *ngIf="loginForm.get('mobileNumber').hasError(error.type) && (loginForm.get('mobileNumber').dirty || loginForm.get('mobileNumber').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" formControlName="gender" class="form-control browser-default custom-select" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.gender">
+            <div class="error-message" *ngIf="loginForm.get('gender').hasError(error.type) && (loginForm.get('gender').dirty || loginForm.get('gender').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> --> 
+
+
+        <div class="col-sm-4 form-group">
+          <label for="state">State</label>
+          <input type="address" formControlName="state" class="form-control" name="state" id="state" placeholder="Enter your state name." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.state">
+            <div class="error-message" *ngIf="loginForm.get('state').hasError(error.type) && (loginForm.get('state').dirty || loginForm.get('state').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-4 form-group">
+          <label for="city">City</label>
+          <input type="address" formControlName="city" class="form-control" name="city" id="city" placeholder="Enter your City." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.city">
+            <div class="error-message" *ngIf="loginForm.get('city').hasError(error.type) && (loginForm.get('city').dirty || loginForm.get('city').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-2 form-group">
+          <label for="pincode">Postal-Code</label>
+          <input type="zip" formControlName="pincode" class="form-control" name="pincode" id="pincode" placeholder="Postal-Code." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.pincode">
+            <div class="error-message" *ngIf="loginForm.get('pincode').hasError(error.type) && (loginForm.get('pincode').dirty || loginForm.get('pincode').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+        
+
+        <div class="col-sm-6 form-group">
+          <label for="dateOfBirth">Date Of Birth</label>
+          <input type="Date" formControlName="dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth" placeholder="" required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.dateOfBirth">
+            <div class="error-message" *ngIf="loginForm.get('dateOfBirth').hasError(error.type) && (loginForm.get('dateOfBirth').dirty || loginForm.get('dateOfBirth').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group">
+          <label for="userName">User Name</label>
+          <input type="text" formControlName="userName" name="userName" class="form-control" id="userName" placeholder="Enter a User Number." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.userName">
+            <div class="error-message" *ngIf="loginForm.get('userName').hasError(error.type) && (loginForm.get('userName').dirty || loginForm.get('userName').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group" >
+          <label for="password">Password</label>
+          <input type="Password" formControlName="password" name="password" class="form-control" id="password" placeholder="Enter your password." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.password">
+            <div class="error-message" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <div class="col-sm-6 form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="Password" formControlName="confirmPassword" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Re-enter your password." required>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.confirmpassword">
+            <div class="error-message" *ngIf="loginForm.get('confirmpassword').hasError(error.type) && (loginForm.get('confirmpassword').dirty || loginForm.get('confirmpassword').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div> -->
+
+        <div style="padding: 7px; margin-left: 7px;" >
+          <input type="checkbox" formControlName="checkbox" id="checkbox" required>
+          <label for="checkbox" class="form-check-label">&nbsp;I accept all terms and conditions.</label>
+        </div>
+        <!-- <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.checkbox.">
+            <div class="error-message" *ngIf="loginForm.hasError('required',checkbox)">
+              {{ error.message }}
+            </div>
+          </ng-container>[disabled]="loginForm.invalid"
+        </div> --> 
+
+  
+        <div class="col-sm-12 form-group mb-0">
+          <button class="btn btn-primary float-right" type="submit" >Submit</button>
+        </div>
+  
+      </div>
+    </form>
+  </div>
+</body>

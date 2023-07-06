@@ -1,0 +1,34 @@
+<body>
+<app-admin-header></app-admin-header>
+<br><br>
+<table class="table table-hover table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Account ID</th>
+            <th>Amount Due</th>
+            <th>Interest</th>
+            <th>Term</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let user of obj">
+        <tr class="table-active">
+            <td>{{user.account_Id}}</td>
+            <td>{{user.client_id.firstName}}</td>
+            <td>{{user.client_id.lastName}}</td>
+            <td>{{user.client_id.client_id}}</td>
+            <td>{{user.amount_to_pay}}</td>
+            <td>{{user.premium_amount}}</td>
+            <td>{{user.period}}</td>
+            <td>{{user.status}}</td>
+            <td><button (click)="approve(user.account_Id)" type="button" class="btn btn-success" id="Approve">Approve</button> <button (click)="reject(user.account_Id)" type="button" class="btn btn-danger" id="Reject">Reject</button></td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
+</body>

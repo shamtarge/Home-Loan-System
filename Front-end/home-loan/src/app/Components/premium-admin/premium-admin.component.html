@@ -1,0 +1,23 @@
+<body>
+<app-admin-header></app-admin-header>
+<br><br>
+
+<table class="table table-hover table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Client ID</th>
+            <th>Balance Due</th>
+            <th>Premium</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-active">
+          <td>{{user.account_Id}}</td>
+          <td>{{user.amount_to_pay}}</td>
+          <td>{{user.premium_amount}}</td>
+          <td><button type="button" (click)="payPremium()" class="btn btn-success">Pay Premium</button></td>
+        </tr>
+    </tbody>
+</table>
+</body>

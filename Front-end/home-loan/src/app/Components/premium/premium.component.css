@@ -1,0 +1,17 @@
+table{
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10%;
+    z-index: 10;
+    border-radius: 10px;
+}
+body{
+
+    height: 620px;
+    background-color: #919191;
+}
+button{
+    background-color: #20dd6c;
+    color: black;
+}
